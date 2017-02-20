@@ -1,0 +1,19 @@
+.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='/')
+        i.fa.fa-cube
+        | Api visualizer
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li(class=(title == 'Users') ? 'active' : undefined)
+          a(href='/users') Users
+        li(class=(title == 'Alliances') ? 'active' : undefined)
+          a(href='/alliances') Alliances
+        li(class=(title == 'Characters') ? 'active' : undefined)
+          a(href='/characters') Characters

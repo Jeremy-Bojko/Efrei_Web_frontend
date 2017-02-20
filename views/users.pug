@@ -1,0 +1,27 @@
+extends layout
+
+block content
+	.container-fluid
+		nav.navbar.navbar-default
+			.container-fluid
+				.navbar-header
+					a.navbar-brand(href="/users") Users  
+	.container-fluid
+		.row-fluid
+			table.table
+				thead
+					tr
+						th Name
+						th Email
+						th Alliance id
+						th Alliance Name
+				tbody
+				for user in users 
+					tr
+						td
+							a(href="/users/" + user.id) #{user.name}
+						td= user.email
+						td= user.alliance_id
+						for alliance in alliances
+							if alliance.id == user.alliance_id
+								td= alliance.name

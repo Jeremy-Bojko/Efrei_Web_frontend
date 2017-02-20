@@ -1,0 +1,31 @@
+extends layout
+
+block content
+	.container-fluid
+		nav.navbar.navbar-default
+			.container-fluid
+				.navbar-header
+					a.navbar-brand(href="/characters") Characters  
+	.container-fluid
+		.row-fluid
+			table.table
+				thead
+					tr
+						th Name
+						th Class
+						th User id
+						th User name
+						th Position Latitude
+						th Postion Longitude
+				tbody
+				for character in characters 
+					tr
+						td
+							a(href="/characters/" + character.id) #{character.name}
+						td= character.class
+						td= character.user_id
+						for user in users
+							if user.id == character.user_id
+								td= user.name
+						td= character.position.x
+						td= character.position.y

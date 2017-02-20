@@ -1,0 +1,21 @@
+extends layout
+
+block content
+	.container-fluid
+		nav.navbar.navbar-default
+			.container-fluid
+				.navbar-header
+						h2 Information page of #{user.name}
+	.container-fluid
+		form.form-horizontal(action='')
+			img(src="http://www.fillmurray.com/100/100", class='profile', width='100', height='100')
+
+			.form-group
+			label.col-sm-3.control-label 
+				h3 Name : #{user.name}
+			.form-group
+			label.col-sm-3.control-label 
+				h3 Email : #{user.email}
+			.form-group
+			label.col-sm-3.control-label 
+				h3 Alliance : #{alliance.name}

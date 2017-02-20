@@ -1,0 +1,27 @@
+extends layout
+
+block content
+	.container-fluid
+		nav.navbar.navbar-default
+			.container-fluid
+				.navbar-header
+						h2 Information page of alliance #{alliance.name}
+	.container-fluid
+		form.form-horizontal(action='')
+			img(src="http://www.fillmurray.com/200/200", class='profile', width='200', height='200')
+			.form-group
+			label.col-sm-3.control-label 
+				h3 Name : #{alliance.name}
+			.container-fluid
+				.row-fluid
+					table.table
+						thead
+							tr
+								th Name
+								th Email
+						tbody
+						for user in users 
+							tr
+								td
+									a(href="/users/" + user.id) #{user.name}
+								td= user.email
